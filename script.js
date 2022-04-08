@@ -71,3 +71,7 @@ function shuffle(array) {
     $("#Restart").on('click', () => {
         location.reload();
     });
+
+    $(".playAgain").on('click', () => {
+        location.reload();
+    });
