@@ -40,9 +40,15 @@ h2 {
 
 .images img {
     padding: 5px;
+    width: 130px;
+    height: 130px;
     display: none;
 }
 
+.disabled{
+    pointer-events: none;
+    cursor: wait;
+}
 .restart {
     text-align: center;
 }

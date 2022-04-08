@@ -1,28 +1,69 @@
 const mieImg = ["arrabbiato", "bello", "piangere", "ridere", "amare", "amare1", "spavento", "shock", "arrabbiato", "bello",
     "piangere", "ridere", "amare", "amare1", "spavento", "shock"];
-// creo una variabile che mi contiene le immagini cliccate
 
-// quando il documento è pronto...vado a selezionare casualmente una immagine dalla cartella.
+let nClicks = 0;
+let arrayComparsion = [];
 
-    // creo una variabile "images" che contiene il selettore della classe "images". 
-    // così ho un oggetto jQuery e metto gli elementi corrispondenti nell'oggetto jQuery.
-
-    // creo un ciclo for sull'oggetto creato per ottenere poi un'immagine random.
-
-        // prendo a caso un elemento dalla mia lista.
-
-        // vado a prendere il file localizzato nella directory img e creo il tag html e lo inserisco nella pagina.
-        //images.eq(e).html("<img id='" + e + "' src='images/" + randomImg + ".png' width='130' height='130' />");
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
   
- // creo la funzione principale "mostraImg"
+    while (currentIndex != 0) {
+  
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
 
-    // creo l'oggetto jQuery per i clicks e lo chiamo "tuttiIClick" e prendo il valore e poi incremento.
-    
-    // ora visualizzo l'emoji (l'immagine) a due a due se sono diverse le nascondo altrimenti le lascio visibili.
-    
-        // se non sono due visualizzo l'emoji e la inserisco in "clickImgs".
+    console.log(mieImg);
+    console.log(shuffle(mieImg));
+
+    function startGame(){
+        var arrayShuffle = shuffle(mieImg);
+        let grid = $('.griglia');
+
+        while(grid.children().length != 0){
+            grid.empty();
+        }
         
-            // se sono uguali azzero la mia lista.
-            
-                // se sono diverse nascondo le due immagini.
-                
+        for(let i=0; i<arrayShuffle.length; i++){
+            $('<div class="images"></div>').appendTo(grid);
+            $(".images").eq(i).append('<img src="img/'+arrayShuffle[i]+'.png">')
+        }
+    }
+
+    startGame();
+
+    function mostraImg(image){
+        arrayComparsion.push(image);
+        if(arrayComparsion.length == 2){
+            if(arrayComparsion[0] === arrayComparsion[1]){
+                $('img').filter('[src="'+arrayComparsion[0]+'"]').parent().addClass("disabled");
+                $('img').filter('[src="'+arrayComparsion[1]+'"]').parent().addClass("disabled");
+                console.log("trovato");
+                arrayComparsion = [];
+            }
+            else{
+                $('.images').addClass("disabled");
+                let temp = arrayComparsion;
+                setTimeout(function(){
+                    $('img').filter('[src="'+temp[0]+'"]').css('display', 'none');
+                    $('img').filter('[src="'+temp[1]+'"]').css('display', 'none');
+                    $('.images').removeClass("disabled");
+                },700);
+                arrayComparsion = [];
+                console.log("non trovato");
+            }
+        }
+    }
+
+    $(".images").on('click', function(){
+        $(this).children().css("display", "inline");
+        mostraImg($(this).children().attr("src"));
+        nClicks += 1;
+        $('#clicks').text(nClicks);
+    })
