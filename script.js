@@ -3,6 +3,7 @@ const mieImg = ["arrabbiato", "bello", "piangere", "ridere", "amare", "amare1", 
 
 let nClicks = 0;
 let arrayComparsion = [];
+let countFound = 0;
 
 startGame();
 
@@ -34,7 +35,7 @@ function shuffle(array) {
         
         for(let i=0; i<arrayShuffle.length; i++){
             $('<div class="images"></div>').appendTo(grid);
-            $(".images").eq(i).append('<img src="img/'+arrayShuffle[i]+'.png">')
+            $(".images").eq(i).append('<img src="img/'+arrayShuffle[i]+'.png" class="disable-select">')
         }
     }
 
@@ -45,6 +46,8 @@ function shuffle(array) {
                 $('img').filter('[src="'+arrayComparsion[0]+'"]').parent().addClass("disabled");
                 $('img').filter('[src="'+arrayComparsion[1]+'"]').parent().addClass("disabled");
                 console.log("trovato");
+                countFound += 1;
+                if(countFound == mieImg.length/2) mostraModale();
                 arrayComparsion = [];
             }
             else{
@@ -61,8 +64,15 @@ function shuffle(array) {
         }
     }
 
+    function mostraModale(){
+        let modale = $('#modal');
+        modale.addClass('active');
+        $("#nClicks").append('<h3>Hai completato la tua partita in soli ' + nClicks + ' click!</h3>');
+    }
+
+
     $(".images").on('click', function(){
-        $(this).children().css("display", "inline");
+        $(this).children().css("display", "block");
         mostraImg($(this).children().attr("src"));
         nClicks += 1;
         $('#clicks').text(nClicks);
@@ -71,3 +81,8 @@ function shuffle(array) {
     $("#Restart").on('click', () => {
         location.reload();
     });
+
+    $(".playAgain").on('click', () => {
+        location.reload();
+    });
+

@@ -1,0 +1,290 @@
+.Header__shape {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: cubic-bezier(0.18, 1.17, 0.03, 1.46);
+          animation-timing-function: cubic-bezier(0.18, 1.17, 0.03, 1.46);
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+}
+
+body {
+  background: radial-gradient(#c2c2c2 8%, transparent 8%), white;
+  background-position: 0 0, 25px 25px;
+  background-size: 25px 25px;
+  min-height: 100vh;
+}
+
+.Header {
+  position: relative;
+  min-height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Header__svg {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+  will-change: transform;
+}
+
+.Header__title {
+  font-family: Avenir, Futura, "Open Sans", "Gill Sans", "Helvetica Neue", Ariel,
+ sans-serif;
+  font-weight: bold;
+  font-size: 5vw;
+  color: rgb(185, 0, 0);
+  margin: 0;
+}
+
+.bigSquare {
+  -webkit-animation-name: bigSquare;
+          animation-name: bigSquare;
+}
+
+@-webkit-keyframes bigSquare {
+  from {
+    -webkit-transform: translateY(10%) rotate(-80deg) scale(0);
+            transform: translateY(10%) rotate(-80deg) scale(0);
+  }
+  to {
+    -webkit-transform: translateY(0) rotate(0deg) scale(1);
+            transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes bigSquare {
+  from {
+    -webkit-transform: translateY(10%) rotate(-80deg) scale(0);
+            transform: translateY(10%) rotate(-80deg) scale(0);
+  }
+  to {
+    -webkit-transform: translateY(0) rotate(0deg) scale(1);
+            transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.littleSquare {
+  -webkit-animation-name: littleSquare;
+          animation-name: littleSquare;
+}
+
+@-webkit-keyframes littleSquare {
+  from {
+    -webkit-transform: translate(226%, 183%) rotate(140deg) scale(0);
+            transform: translate(226%, 183%) rotate(140deg) scale(0);
+  }
+  to {
+    -webkit-transform: translate(0%, 0%) rotate(0deg) scale(1);
+            transform: translate(0%, 0%) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes littleSquare {
+  from {
+    -webkit-transform: translate(226%, 183%) rotate(140deg) scale(0);
+            transform: translate(226%, 183%) rotate(140deg) scale(0);
+  }
+  to {
+    -webkit-transform: translate(0%, 0%) rotate(0deg) scale(1);
+            transform: translate(0%, 0%) rotate(0deg) scale(1);
+  }
+}
+
+.triangle {
+  -webkit-animation-name: triangle;
+          animation-name: triangle;
+}
+
+@-webkit-keyframes triangle {
+  from {
+    -webkit-transform: rotate(-140deg) scale(0);
+            transform: rotate(-140deg) scale(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes triangle {
+  from {
+    -webkit-transform: rotate(-140deg) scale(0);
+            transform: rotate(-140deg) scale(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+
+.hoop {
+  -webkit-animation-name: hoop;
+          animation-name: hoop;
+}
+
+@-webkit-keyframes hoop {
+  from {
+    -webkit-transform: translate(-160%, -33%) scale(0);
+            transform: translate(-160%, -33%) scale(0);
+  }
+  to {
+    -webkit-transform: translate(0%, 0%) scale(1);
+            transform: translate(0%, 0%) scale(1);
+  }
+}
+
+@keyframes hoop {
+  from {
+    -webkit-transform: translate(-160%, -33%) scale(0);
+            transform: translate(-160%, -33%) scale(0);
+  }
+  to {
+    -webkit-transform: translate(0%, 0%) scale(1);
+            transform: translate(0%, 0%) scale(1);
+  }
+}
+
+.bigCircle {
+  -webkit-animation-name: bigCircle;
+          animation-name: bigCircle;
+}
+
+@-webkit-keyframes bigCircle {
+  from {
+    -webkit-transform: scale(0) translate(60%, 3%);
+            transform: scale(0) translate(60%, 3%);
+  }
+  to {
+    -webkit-transform: scale(1) translate(0%, 0%);
+            transform: scale(1) translate(0%, 0%);
+  }
+}
+
+@keyframes bigCircle {
+  from {
+    -webkit-transform: scale(0) translate(60%, 3%);
+            transform: scale(0) translate(60%, 3%);
+  }
+  to {
+    -webkit-transform: scale(1) translate(0%, 0%);
+            transform: scale(1) translate(0%, 0%);
+  }
+}
+
+.littleCircle {
+  -webkit-animation-name: littleCircle;
+          animation-name: littleCircle;
+}
+
+@-webkit-keyframes littleCircle {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes littleCircle {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.Header__shape:nth-child(1) {
+  -webkit-animation-delay: 0.16s;
+          animation-delay: 0.16s;
+}
+
+.Header__shape:nth-child(2) {
+  -webkit-animation-delay: 0.32s;
+          animation-delay: 0.32s;
+}
+
+.Header__shape:nth-child(3) {
+  -webkit-animation-delay: 0.48s;
+          animation-delay: 0.48s;
+}
+
+.Header__shape:nth-child(4) {
+  -webkit-animation-delay: 0.64s;
+          animation-delay: 0.64s;
+}
+
+.Header__shape:nth-child(5) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.Header__shape:nth-child(6) {
+  -webkit-animation-delay: 0.96s;
+          animation-delay: 0.96s;
+}
+
+.Header__shape:nth-child(7) {
+  -webkit-animation-delay: 1.12s;
+          animation-delay: 1.12s;
+}
+
+.Header__shape:nth-child(8) {
+  -webkit-animation-delay: 1.28s;
+          animation-delay: 1.28s;
+}
+
+.Header__shape:nth-child(9) {
+  -webkit-animation-delay: 1.44s;
+          animation-delay: 1.44s;
+}
+
+.Header__shape:nth-child(10) {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.Header__shape:nth-child(11) {
+  -webkit-animation-delay: 1.76s;
+          animation-delay: 1.76s;
+}
+/*# sourceMappingURL=animazioni.css.map */
+
+
+.contenitore{
+  display: inline-block;
+  margin: 3em;
+  margin-bottom: 1em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.typed-out{
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: 
+  typing 1s steps(20, end) forwards;
+  font-size: 3rem;
+  width: 0;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
