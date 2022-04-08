@@ -4,6 +4,8 @@ const mieImg = ["arrabbiato", "bello", "piangere", "ridere", "amare", "amare1", 
 let nClicks = 0;
 let arrayComparsion = [];
 
+startGame();
+
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
@@ -17,7 +19,7 @@ function shuffle(array) {
     }
   
     return array;
-  }
+}
 
     console.log(mieImg);
     console.log(shuffle(mieImg));
@@ -35,8 +37,6 @@ function shuffle(array) {
             $(".images").eq(i).append('<img src="img/'+arrayShuffle[i]+'.png">')
         }
     }
-
-    startGame();
 
     function mostraImg(image){
         arrayComparsion.push(image);
@@ -66,4 +66,8 @@ function shuffle(array) {
         mostraImg($(this).children().attr("src"));
         nClicks += 1;
         $('#clicks').text(nClicks);
-    })
+    });
+
+    $("#Restart").on('click', () => {
+        location.reload();
+    });
