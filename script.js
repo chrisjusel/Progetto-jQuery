@@ -82,10 +82,7 @@ function shuffle(array) {
         location.reload();
     });
 
-    $(".playAgain").on('click', () => {
+        $(".playAgain").on('click', () => {
         location.reload();
     });
-<<<<<<< HEAD
 
-=======
->>>>>>> 2e77da19516e5ec70fdf4d0818235be880a70efb
