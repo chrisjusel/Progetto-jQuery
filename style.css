@@ -123,4 +123,42 @@ h2 {
     user-select: none;
 }
 
- 
+.show {
+    animation-name: rotazione-carta;
+    animation-duration: .3s;
+    background-color: rgb(211, 163, 6);
+    border-radius: 10px;
+}
+
+.find {
+    animation-name: indovinato;
+    animation-duration: .3s;
+    background-color: rgb(92, 221, 6);
+    border-radius: 10px;
+}
+
+@keyframes rotazione-carta{
+    from {
+        transform: perspective(300px) rotate3d(0, 1, 0, 80deg);
+        animation-timing-function: ease-in;
+       }
+    
+       50% {
+        transform: perspective(300px) rotate3d(0, 1, 0, -10deg);
+        animation-timing-function: ease-in;
+       }
+    
+       to {
+        transform: perspective(300px);
+        animation-timing-function: ease-in;
+       }
+}
+
+@keyframes indovinato { /* animazione quando si indovina */
+    from { 
+        transform: rotate(0deg);
+       } 
+      to { 
+       transform: rotate(360deg);	 
+      }
+}

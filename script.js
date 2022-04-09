@@ -45,6 +45,8 @@ function shuffle(array) {
             if(arrayComparsion[0] === arrayComparsion[1]){
                 $('img').filter('[src="'+arrayComparsion[0]+'"]').parent().addClass("disabled");
                 $('img').filter('[src="'+arrayComparsion[1]+'"]').parent().addClass("disabled");
+                $('img').filter('[src="'+arrayComparsion[0]+'"]').parent().addClass('find');
+                $('img').filter('[src="'+arrayComparsion[1]+'"]').parent().addClass('find');
                 console.log("trovato");
                 countFound += 1;
                 if(countFound == mieImg.length/2) mostraModale();
@@ -56,6 +58,8 @@ function shuffle(array) {
                 setTimeout(function(){
                     $('img').filter('[src="'+temp[0]+'"]').css('display', 'none');
                     $('img').filter('[src="'+temp[1]+'"]').css('display', 'none');
+                    $('img').filter('[src="'+temp[0]+'"]').parent().removeClass('show');
+                    $('img').filter('[src="'+temp[1]+'"]').parent().removeClass('show');
                     $('.images').removeClass("disabled");
                 },700);
                 arrayComparsion = [];
@@ -74,6 +78,7 @@ function shuffle(array) {
     $(".images").on('click', function(){
         $(this).children().css("display", "block");
         mostraImg($(this).children().attr("src"));
+        $(this).addClass('show');
         nClicks += 1;
         $('#clicks').text(nClicks);
     });
