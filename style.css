@@ -80,6 +80,26 @@ h2 {
     cursor: pointer;
 }
 
+#selDiff{
+    font-family: 'Montserrat Alternates', sans-serif;
+    float: left;
+    margin: 2.5em;
+    border-radius: 10px;
+    padding: 10px 10px;
+    padding: 1em;
+    background: rgb(15, 15, 15);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
 /*MODALE*/
 .playAgain:hover, #Restart:hover{
     background-color: rgb(255, 0, 0);
@@ -102,6 +122,49 @@ h2 {
 #modal.active {
     display: flex;
     text-align: center;
+}
+
+#modalDiff {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#modalDiff.active {
+    display: flex;
+    text-align: center;
+}
+
+#modalDiff h1{
+    font-size: 3em;
+}
+
+#easy{
+    background-color: greenyellow;
+    font-weight: bold;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 10px;
+    font-size: 2em;
+    border: none;
+    margin: 1em;
+    cursor: pointer;
+}
+
+#hard{
+    background-color: red;
+    font-weight: bold;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 10px;
+    font-size: 2em;
+    border: none;
+    margin: 1em;
+    cursor: pointer;
 }
 
 #nClicks{

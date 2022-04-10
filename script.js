@@ -5,7 +5,7 @@ let nClicks = 0;
 let arrayComparsion = [];
 let countFound = 0;
 
-startGame();
+selezionaDifficolta();
 
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
@@ -21,9 +21,6 @@ function shuffle(array) {
   
     return array;
 }
-
-    console.log(mieImg);
-    console.log(shuffle(mieImg));
 
     function startGame(){
         var arrayShuffle = shuffle(mieImg);
@@ -74,21 +71,50 @@ function shuffle(array) {
         $("#nClicks").append('<h3>Hai completato la tua partita in soli ' + nClicks + ' click!</h3>');
     }
 
+    function selezionaDifficolta(){
+        let modale = $('#modalDiff');
+        modale.addClass('active');
+    }
 
-    $(".images").on('click', function(){
-        $(this).children().css("display", "block");
-        mostraImg($(this).children().attr("src"));
-        $(this).addClass('show');
-        $(this).addClass('disabled');
-        nClicks += 1;
-        $('#clicks').text(nClicks);
-    });
-
-    $("#Restart").on('click', () => {
+    $("#Restart, #selDiff").on('click', () => {
         location.reload();
     });
 
-        $(".playAgain").on('click', () => {
+    $(".playAgain").on('click', () => {
         location.reload();
     });
 
+    $("#hard").on('click', function(){
+        mieImg.push("smile");
+        mieImg.push("smile");
+        mieImg.push("abbraccio");
+        mieImg.push("abbraccio");
+        mieImg.push("ricerca");
+        mieImg.push("ricerca");
+        mieImg.push("alieno");
+        mieImg.push("alieno");
+        $('.box').css("width", "70%");
+        $("#modalDiff").removeClass("active");
+        startGame();
+        $(".images").on('click', function(){
+            $(this).children().css("display", "block");
+            mostraImg($(this).children().attr("src"));
+            $(this).addClass('show');
+            $(this).addClass('disabled');
+            nClicks += 1;
+            $('#clicks').text(nClicks);
+        });
+    })
+
+    $("#easy").on('click', function(){
+        $("#modalDiff").removeClass("active");
+        startGame();
+        $(".images").on('click', function(){
+            $(this).children().css("display", "block");
+            mostraImg($(this).children().attr("src"));
+            $(this).addClass('show');
+            $(this).addClass('disabled');
+            nClicks += 1;
+            $('#clicks').text(nClicks);
+        });
+    })
