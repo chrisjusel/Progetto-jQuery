@@ -1,5 +1,5 @@
-const mieImg = ["arrabbiato", "bello", "piangere", "ridere", "amare", "amare1", "spavento", "shock", "arrabbiato", "bello",
-    "piangere", "ridere", "amare", "amare1", "spavento", "shock"];
+let mieImg = ["arrabbiato", "bello", "piangere", "ridere", "amare", "amare1", "spavento", "shock", "arrabbiato", "bello",
+    "piangere", "ridere", "amare", "amare1", "spavento", "shock",];
 
 let nClicks = 0;
 let arrayComparsion = [];
@@ -79,6 +79,7 @@ function shuffle(array) {
         $(this).children().css("display", "block");
         mostraImg($(this).children().attr("src"));
         $(this).addClass('show');
+        $(this).addClass('disabled');
         nClicks += 1;
         $('#clicks').text(nClicks);
     });
