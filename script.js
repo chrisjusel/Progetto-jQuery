@@ -67,6 +67,7 @@ function shuffle(array) {
                     $('img').filter('[src="'+temp[0]+'"]').parent().removeClass('show');
                     $('img').filter('[src="'+temp[1]+'"]').parent().removeClass('show');
                     $('.images').removeClass("disabled");
+                    $('.find').addClass("disabled");
                 },700);
                 arrayComparsion = [];
                 console.log("non trovato");
