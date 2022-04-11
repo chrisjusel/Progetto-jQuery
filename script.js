@@ -34,6 +34,15 @@ function shuffle(array) {
             $('<div class="images"></div>').appendTo(grid);
             $(".images").eq(i).append('<img src="img/'+arrayShuffle[i]+'.png" class="disable-select">')
         }
+
+        $(".images").on('click', function(){
+            $(this).children().css("display", "block");
+            mostraImg($(this).children().attr("src"));
+            $(this).addClass('show');
+            $(this).addClass('disabled');
+            nClicks += 1;
+            $('#clicks').text(nClicks);
+        });
     }
 
     function mostraImg(image){
@@ -96,25 +105,10 @@ function shuffle(array) {
         $('.box').css("width", "70%");
         $("#modalDiff").removeClass("active");
         startGame();
-        $(".images").on('click', function(){
-            $(this).children().css("display", "block");
-            mostraImg($(this).children().attr("src"));
-            $(this).addClass('show');
-            $(this).addClass('disabled');
-            nClicks += 1;
-            $('#clicks').text(nClicks);
-        });
+
     })
 
     $("#easy").on('click', function(){
         $("#modalDiff").removeClass("active");
         startGame();
-        $(".images").on('click', function(){
-            $(this).children().css("display", "block");
-            mostraImg($(this).children().attr("src"));
-            $(this).addClass('show');
-            $(this).addClass('disabled');
-            nClicks += 1;
-            $('#clicks').text(nClicks);
-        });
     })
